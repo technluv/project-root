@@ -12,18 +12,24 @@ const FormModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const token = localStorage.getItem('authToken');
+    console.log('Token:', token); // Add this line for debugging
 
     axios
       .post(
-        'http://backend:8000/api/products/',
+        `${process.env.REACT_APP_API_URL}/api/products/`,
         { name, description, price, stock },
         { headers: { Authorization: `Token ${token}` } }
       )
-      .then(() => {
+      .then((response) => {
+        console.log('Product created:', response.data);
         closeModal();
-        // You might want to refresh the product list or show a success message here
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error('API error:', error);
+        if (error.response) {
+          console.error('Error response:', error.response.data);
+        }
+      });
   };
 
   return (

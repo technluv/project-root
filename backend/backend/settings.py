@@ -8,7 +8,7 @@ SECRET_KEY = 'your-secret-key'  # Replace with a secure key
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 # Application definition
 INSTALLED_APPS = [
@@ -83,12 +83,12 @@ AUTH_USER_MODEL = 'api.User'  # Custom User model
 
 # REST Framework configuration
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-    ),
+    ],
 }
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
-CORS_ALLOW_ALL_ORIGINS = True  # For development only. In production, specify the allowed origins.
+CORS_ALLOW_ALL_ORIGINS = True  # For development only

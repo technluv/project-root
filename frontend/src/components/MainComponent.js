@@ -10,12 +10,13 @@ const MainComponent = () => {
 
   const handleLogin = () => {
     axios
-      .post('http://localhost:8000/api/auth/', {
+      .post(`${process.env.REACT_APP_API_URL}/api/auth/`, {
         username: 'admin',  // Replace with your actual username
         password: 'adminpass',  // Replace with your actual password
       })
       .then((response) => {
         localStorage.setItem('authToken', response.data.token);
+        console.log('Token stored:', response.data.token); // Add this line for debugging
         openModal(SampleModal, {}, {});
       })
       .catch((error) => console.error(error));
