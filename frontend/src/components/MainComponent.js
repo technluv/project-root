@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { ModalContext } from '../ModalContext';
 import SampleModal from './modals/SampleModal';
@@ -7,6 +7,10 @@ import FormModal from './modals/FormModal';
 
 const MainComponent = () => {
   const { openModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    console.log('API URL:', process.env.REACT_APP_API_URL);
+  }, []);
 
   const handleLogin = () => {
     axios
