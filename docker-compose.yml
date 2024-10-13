@@ -14,7 +14,6 @@ services:
       - DB_NAME=postgres
       - DB_USER=postgres
       - DB_PASSWORD=postgres
-    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
 
   frontend:
     build: ./frontend
@@ -25,8 +24,6 @@ services:
       - "3000:3000"
     depends_on:
       - backend
-    environment:
-      - REACT_APP_BACKEND_URL=http://backend:8000
 
   db:
     image: postgres
