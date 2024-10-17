@@ -23,7 +23,10 @@ const MainComponent = () => {
         console.log('Token stored:', response.data.token); // Add this line for debugging
         openModal(SampleModal, {}, {});
       })
-      .catch((error) => console.error(error));
+.catch((error) => { 
+  console.error(error); 
+  alert("An error occurred: " + error.message); 
+});
   };
 
   const handleOpenConfirmation = () => {

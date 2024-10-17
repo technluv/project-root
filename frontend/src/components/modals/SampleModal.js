@@ -14,7 +14,10 @@ const SampleModal = () => {
         headers: { Authorization: `Token ${token}` },
       })
       .then((response) => setProducts(response.data))
-      .catch((error) => console.error(error));
+.catch((error) => { 
+  console.error(error); 
+  alert("An error occurred: " + error.message); 
+});
   }, []);
 
   return (
