@@ -1,0 +1,54 @@
+/* Nokia-inspired CSS styles */
+body {
+    font-family: 'Nokia Pure Text', Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+button {
+    background-color: #005aff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0041c4;
+}
+
+.modal {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.modal-header, .modal-footer {
+    background-color: #e6e6e6;
+    padding: 10px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+nav {
+    background-color: #005aff;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+}

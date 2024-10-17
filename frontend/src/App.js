@@ -1,3 +1,4 @@
+import './styles/nokia.css';
 import React from 'react';
 import { ModalProvider } from './ModalContext';
 import ModalContainer from './components/ModalContainer';
