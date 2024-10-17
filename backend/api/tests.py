@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from .models import Product
 from rest_framework import status
 
+
 class APITests(TestCase):
     def setUp(self):
         self.client = APIClient()
@@ -46,7 +47,8 @@ class APITests(TestCase):
         data = {'name': 'Updated Product'}
         response = self.client.patch(f'/api/products/{self.product.id}/', data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(Product.objects.get(id=self.product.id).name, 'Updated Product')
+        self.assertEqual(Product.objects.get(
+            id=self.product.id).name, 'Updated Product')
 
     def test_delete_product(self):
         response = self.client.delete(f'/api/products/{self.product.id}/')
